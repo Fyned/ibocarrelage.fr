@@ -117,7 +117,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-6">
             <p className="text-white/20 text-xs">
-              Demo réalisée par <span className="text-white/60 font-semibold hover:text-[#E31E24] transition-colors cursor-pointer">DMC Kreatif</span>
+              Demo réalisée par <a href="https://www.dmckreatif.com" target="_blank" rel="noopener noreferrer" className="text-white/60 font-semibold hover:text-[#E31E24] transition-colors">DMC Kreatif</a>
             </p>
 
             <button

@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import SectionTitle from '../components/ui/SectionTitle'
 import ImageLightbox from '../components/ui/ImageLightbox'
 import { projects, type Project, type ProjectCategory } from '../data/projects'
 import { useMeta } from '../hooks/useMeta'
+import { useDevis } from '../hooks/useDevis'
 
 type Filter = 'tous' | ProjectCategory
 
@@ -17,6 +17,8 @@ const filters: { key: Filter; label: string }[] = [
 ]
 
 export default function GalleryPage() {
+  const { openDevis } = useDevis()
+
   useMeta({
     title: 'Nos Réalisations | IBO Carrelage – Carreleur à Chambéry',
     description:
@@ -105,12 +107,12 @@ export default function GalleryPage() {
           <p className="text-white/80 mb-8 text-lg">
             Demandez votre devis gratuit !
           </p>
-          <Link
-            to="/devis"
-            className="inline-flex items-center gap-2 px-10 py-4 text-base font-semibold rounded-lg border-2 border-white text-white hover:bg-white hover:text-[#E31E24] transition-all duration-300"
+          <button
+            onClick={openDevis}
+            className="inline-flex items-center gap-2 px-10 py-4 text-base font-semibold rounded-lg border-2 border-white text-white hover:bg-white hover:text-[#E31E24] transition-all duration-300 cursor-pointer"
           >
             Demander un Devis <ArrowRight size={20} />
-          </Link>
+          </button>
         </div>
       </section>
 

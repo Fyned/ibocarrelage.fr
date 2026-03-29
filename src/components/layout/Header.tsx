@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import DevisSidebar from '../ui/DevisSidebar'
@@ -14,17 +14,29 @@ const navLinks = [
 ]
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false)
+  const { pathname } = useLocation()
+  const isHome = pathname === '/'
+
+  const [scrolled, setScrolled] = useState(!isHome)
   const [hidden, setHidden] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const { open: devisOpen, openDevis, closeDevis } = useDevis()
   const lastScrollY = useRef(0)
   const { scrollY } = useScroll()
 
+  useEffect(() => {
+    setScrolled(!isHome || window.scrollY > 80)
+    setMenuOpen(false)
+  }, [isHome])
+
   useMotionValueEvent(scrollY, 'change', (latest) => {
     const diff = latest - lastScrollY.current
 
-    if (latest < 80) {
+    if (!isHome) {
+      setScrolled(true)
+      if (diff > 8 && latest > 80) setHidden(true)
+      if (diff < -5) setHidden(false)
+    } else if (latest < 80) {
       setScrolled(false)
       setHidden(false)
     } else {

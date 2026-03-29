@@ -1,0 +1,124 @@
+[
+  {
+    "id": 1,
+    "src": "/images/instagram/ig-01.jpg",
+    "caption": "Travaux neufs — carrelage grand format. Contactez-nous pour tous vos projets.",
+    "tags": [
+      "neuf",
+      "carrelagegrandformat",
+      "artisanat"
+    ],
+    "instagramUrl": "https://www.instagram.com/ibocarrelage/"
+  },
+  {
+    "id": 2,
+    "src": "/images/instagram/ig-02.jpg",
+    "caption": "Rénovation — finition soignée. Passionné par les beaux projets.",
+    "tags": [
+      "renovations",
+      "finition",
+      "carreleur"
+    ],
+    "instagramUrl": "https://www.instagram.com/ibocarrelage/"
+  },
+  {
+    "id": 3,
+    "src": "/images/instagram/ig-03.jpg",
+    "caption": "Pose de carrelage — sols et murs. Artisanat de qualité en Savoie.",
+    "tags": [
+      "carrelage",
+      "savoie",
+      "tiling"
+    ],
+    "instagramUrl": "https://www.instagram.com/ibocarrelage/"
+  },
+  {
+    "id": 4,
+    "src": "/images/instagram/ig-04.webp",
+    "caption": "Notre priorité est la satisfaction du client. Avant/après rénovation complète — bois, marbre, faïence.",
+    "tags": [
+      "avantapres",
+      "renovation",
+      "marbre",
+      "bois"
+    ],
+    "instagramUrl": "https://www.instagram.com/ibocarrelage/"
+  },
+  {
+    "id": 5,
+    "src": "/images/instagram/ig-05.jpg",
+    "caption": "Carrelage salle de bain — Chambéry. Devis gratuit. Expérience · Top prix · Qualité.",
+    "tags": [
+      "salledebain",
+      "chambery",
+      "carreleur73"
+    ],
+    "instagramUrl": "https://www.instagram.com/ibocarrelage/"
+  },
+  {
+    "id": 6,
+    "src": "/images/instagram/ig-06.jpg",
+    "caption": "Rénovation sol et mur — Chambéry et alentours. Devis gratuit.",
+    "tags": [
+      "renovation",
+      "savoie",
+      "carrelage"
+    ],
+    "instagramUrl": "https://www.instagram.com/ibocarrelage/"
+  },
+  {
+    "id": 7,
+    "src": "/images/instagram/ig-07.webp",
+    "caption": "Pose faïence murale — travaux de qualité. Chambéry, Bassens, Savoie.",
+    "tags": [
+      "faince",
+      "bassens",
+      "salledebain"
+    ],
+    "instagramUrl": "https://www.instagram.com/ibocarrelage/"
+  },
+  {
+    "id": 8,
+    "src": "/images/instagram/ig-08.jpg",
+    "caption": "Carrelage grand format — finitions soignées. Artisan carreleur 73.",
+    "tags": [
+      "carreleur73",
+      "renovation",
+      "chambery"
+    ],
+    "instagramUrl": "https://www.instagram.com/ibocarrelage/"
+  },
+  {
+    "id": 9,
+    "src": "/images/instagram/ig-09.webp",
+    "caption": "Sol et mur — réalisation complète. Top prix, rapidement, qualité garantie.",
+    "tags": [
+      "carrelage",
+      "savoie",
+      "flooring"
+    ],
+    "instagramUrl": "https://www.instagram.com/ibocarrelage/"
+  },
+  {
+    "id": 10,
+    "src": "/images/instagram/ig-10.webp",
+    "caption": "Pose carrelage salle de bain — résultat parfait. Chambéry, Savoie.",
+    "tags": [
+      "salledebain",
+      "carreleur73",
+      "savoie"
+    ],
+    "instagramUrl": "https://www.instagram.com/ibocarrelage/"
+  },
+  {
+    "id": 11,
+    "src": "/images/instagram/ig-11.webp",
+    "caption": "Dernière réalisation — carrelage moderne. Artisan carreleur Chambéry.",
+    "tags": [
+      "chambery",
+      "carrelage",
+      "renovation"
+    ],
+    "instagramUrl": "https://www.instagram.com/ibocarrelage/"
+  }
+]

@@ -5,20 +5,23 @@ import Footer from './components/layout/Footer'
 import HomePage from './pages/HomePage'
 import GalleryPage from './pages/GalleryPage'
 import DevisPage from './pages/DevisPage'
+import { DevisProvider } from './hooks/useDevis'
 
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
-      <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/galerie" element={<GalleryPage />} />
-          <Route path="/devis" element={<DevisPage />} />
-        </Routes>
-      </main>
-      <Footer />
+      <DevisProvider>
+        <ScrollToTop />
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/galerie" element={<GalleryPage />} />
+            <Route path="/devis" element={<DevisPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </DevisProvider>
     </BrowserRouter>
   )
 }

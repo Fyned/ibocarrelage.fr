@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import DevisSidebar from '../ui/DevisSidebar'
+import { useDevis } from '../../hooks/useDevis'
 
 const navLinks = [
   { to: '/#services', label: 'Services' },
@@ -15,6 +17,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [hidden, setHidden] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const { open: devisOpen, openDevis, closeDevis } = useDevis()
   const lastScrollY = useRef(0)
   const { scrollY } = useScroll()
 
@@ -91,13 +94,13 @@ export default function Header() {
 
               <div className={`w-px h-6 mx-3 ${scrolled ? 'bg-black/10' : 'bg-white/20'}`} />
 
-              <NavLink
-                to="/devis"
-                className="group flex items-center gap-2 bg-[#E31E24] text-white px-7 py-3 rounded-full text-sm font-bold hover:bg-[#C41A1F] transition-all duration-300 shadow-lg shadow-[#E31E24]/25 hover:shadow-xl hover:shadow-[#E31E24]/30 hover:scale-[1.02]"
+              <button
+                onClick={() => openDevis()}
+                className="group flex items-center gap-2 bg-[#E31E24] text-white px-7 py-3 rounded-full text-sm font-bold hover:bg-[#C41A1F] transition-all duration-300 shadow-lg shadow-[#E31E24]/25 hover:shadow-xl hover:shadow-[#E31E24]/30 hover:scale-[1.02] cursor-pointer"
               >
                 Devis gratuit
                 <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-              </NavLink>
+              </button>
             </nav>
 
             {/* Mobile hamburger */}
@@ -174,14 +177,13 @@ export default function Header() {
                 transition={{ duration: 0.4, delay: 0.55 }}
                 className="mt-10"
               >
-                <NavLink
-                  to="/devis"
-                  className="inline-flex items-center gap-3 bg-[#E31E24] text-white px-10 py-4 rounded-full text-lg font-bold shadow-lg shadow-[#E31E24]/30 hover:bg-[#C41A1F] transition-colors"
-                  onClick={() => setMenuOpen(false)}
+                <button
+                  className="inline-flex items-center gap-3 bg-[#E31E24] text-white px-10 py-4 rounded-full text-lg font-bold shadow-lg shadow-[#E31E24]/30 hover:bg-[#C41A1F] transition-colors cursor-pointer"
+                  onClick={() => { setMenuOpen(false); setTimeout(() => openDevis(), 400) }}
                 >
                   Devis gratuit
                   <ArrowRight size={20} />
-                </NavLink>
+                </button>
               </motion.div>
 
               <motion.div
@@ -204,6 +206,9 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Devis sidebar */}
+      <DevisSidebar open={devisOpen} onClose={closeDevis} />
     </>
   )
 }

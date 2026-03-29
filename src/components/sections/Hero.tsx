@@ -1,9 +1,10 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import { Link } from 'react-router-dom'
 import { ChevronDown, Star } from 'lucide-react'
+import { useDevis } from '../../hooks/useDevis'
 
 export default function Hero() {
+  const { openDevis } = useDevis()
   const sectionRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end start'] })
   const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '25%'])
@@ -35,7 +36,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.1 }}
         >
           Des sols et murs<br />
-          <span className="text-[#E31E24]">d'exception</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E31E24] to-[#ff6b6b]">d'exception</span>
         </motion.h1>
 
         <motion.p
@@ -54,12 +55,12 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <Link
-            to="/devis"
-            className="inline-flex items-center justify-center bg-[#E31E24] text-white px-8 py-4 rounded-lg font-semibold text-sm sm:text-base hover:bg-[#C41A1F] transition-colors duration-300 shadow-lg hover:shadow-xl"
+          <button
+            onClick={openDevis}
+            className="inline-flex items-center justify-center bg-[#E31E24] text-white px-8 py-4 rounded-lg font-semibold text-sm sm:text-base hover:bg-[#C41A1F] transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer"
           >
             Demander un Devis
-          </Link>
+          </button>
           <a
             href="#realisations"
             className="inline-flex items-center justify-center border-2 border-white/60 text-white px-8 py-4 rounded-lg font-semibold text-sm sm:text-base hover:border-white hover:bg-white/10 transition-all duration-300"

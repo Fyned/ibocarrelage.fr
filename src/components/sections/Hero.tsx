@@ -1,14 +1,19 @@
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronDown, Star } from 'lucide-react'
 
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end start'] })
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '25%'])
+
   return (
-    <section className="relative h-screen min-h-[640px] flex items-center overflow-hidden">
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/images/hero-bg.webp)' }}
+    <section ref={sectionRef} className="relative h-screen min-h-[640px] flex items-center overflow-hidden">
+      {/* Background with parallax */}
+      <motion.div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
+        style={{ backgroundImage: 'url(/images/hero-bg.webp)', y: bgY }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#2B2A29]/80 via-[#2B2A29]/60 to-[#2B2A29]/30" />
 

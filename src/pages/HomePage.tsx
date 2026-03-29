@@ -1,6 +1,7 @@
 import Hero from '../components/sections/Hero'
 import Services from '../components/sections/Services'
 import Realisations from '../components/sections/Realisations'
+import StatsBar from '../components/sections/StatsBar'
 import About from '../components/sections/About'
 import Testimonials from '../components/sections/Testimonials'
 import Contact from '../components/sections/Contact'
@@ -17,6 +18,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Services />
+      <StatsBar />
       <Realisations />
       <About />
       <Testimonials />

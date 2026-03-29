@@ -16,7 +16,7 @@ export default function Services() {
           {services.map((service, i) => (
             <motion.div
               key={service.id}
-              className="bg-white rounded-2xl border border-[#F0F0F0] p-6 md:p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+              className="bg-white rounded-2xl border border-[#F0F0F0] p-6 md:p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:border-[#E31E24]/30 transition-all duration-300 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}

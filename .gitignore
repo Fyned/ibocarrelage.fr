@@ -7,7 +7,9 @@ dist/
 *.log
 .DS_Store
 Thumbs.db
+*.jpeg
 .claude/
+.playwright-mcp/
 scripts/*.png
 
 .vercel
